@@ -26,8 +26,11 @@ Route::prefix('api')->withoutMiddleware([ValidateCsrfToken::class])->group(funct
         Route::post('/signout', [AuthController::class, 'signout'])->middleware(AuthClient::class);
     });
 
-    Route::prefix('v1')->middleware(AuthClient::class)->group(function () {
+    Route::prefix('v1')->group(function () {
         Route::get('/track/{tracking_number}', [PackageController::class, 'track']);
+    });
+
+    Route::prefix('v1')->middleware(AuthClient::class)->group(function () {
         Route::get('/campus', [CampusController::class, 'getAllCampuses']);
         Route::post('/package', [PackageController::class, 'sendPackage']);
         Route::get('/package', [PackageController::class, 'getMyPackages']);
