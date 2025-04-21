@@ -43,6 +43,6 @@ class Staff extends Model
 
     public function currentCampus()
     {
-        return $this->belongsTo(Campus::class, 'current_campus_id');
+        return $this->belongsTo(Campus::class, 'campus_id');
     }
 }
