@@ -28,7 +28,7 @@ Route::prefix('api')->withoutMiddleware([ValidateCsrfToken::class])->group(funct
 
     Route::prefix('v1')->middleware(AuthClient::class)->group(function () {
         Route::get('/track/{tracking_number}', [PackageController::class, 'track']);
-        // Route::get('/campus', [CampusController::class, 'getAllCampuses']);
+        Route::get('/campus', [CampusController::class, 'getAllCampuses']);
         Route::post('/package', [PackageController::class, 'sendPackage']);
         Route::get('/package', [PackageController::class, 'getMyPackages']);
         Route::patch('/package/{package_id}', [PackageController::class, 'returnPackage']);

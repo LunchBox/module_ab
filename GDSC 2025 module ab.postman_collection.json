@@ -1,0 +1,916 @@
+{
+	"info": {
+		"_postman_id": "8b88d57d-cf1e-4933-91f9-383757c6c6a8",
+		"name": "GDSC 2025 module ab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31033422"
+	},
+	"item": [
+		{
+			"name": "客户端平台 API",
+			"item": [
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"email\": \"lily@wsc.com\", \n    \"password\": \"ceuser\", \n    \"repeat_password\": \"ceuser\", \n    \"phone_number\": \"12345678\", \n    \"firstname\": \"Lily\", \n    \"lastname\": \"Clark\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/auth/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign In",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"email\": \"lily@wsc.com\", \n    \"password\": \"ceuser\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/auth/signin",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign Out",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/v1/auth/signout?token=a39ab12e-7427-438c-bf59-aa47236db7f1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signout"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "a39ab12e-7427-438c-bf59-aa47236db7f1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Track a Package",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/v1/track/CE1220250421001?token=67787264-878f-47fe-8d3e-a0a1ebc3c649",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"track",
+								"CE1220250421001"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "67787264-878f-47fe-8d3e-a0a1ebc3c649"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Campuses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/v1/campus?token=67787264-878f-47fe-8d3e-a0a1ebc3c649",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"campus"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "67787264-878f-47fe-8d3e-a0a1ebc3c649"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send a Package",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"from_campus_id\": 1, \n    \"from_address\": \"Building 1\", \n    \"to_campus_id\": 2, \n    \"to_address\": \"Building 1\", \n    \"recipient_name\": \"William\", \n    \"recipient_phone_number\": \" 12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/package?token=67787264-878f-47fe-8d3e-a0a1ebc3c649",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"package"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "67787264-878f-47fe-8d3e-a0a1ebc3c649"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Packages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/package?token=67787264-878f-47fe-8d3e-a0a1ebc3c649",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"package"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "67787264-878f-47fe-8d3e-a0a1ebc3c649"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Return a Package",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/package/1?token=67787264-878f-47fe-8d3e-a0a1ebc3c649",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"package",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "67787264-878f-47fe-8d3e-a0a1ebc3c649"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "员工平台 API",
+			"item": [
+				{
+					"name": "Sign In",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"email\": \"b_courier@wsc.com\", \n    \"password\": \"courier_b\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/staff/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"staff",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign Out",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"email\": \"courier@wsc.com\", \n    \"password\": \"courier\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/staff/signout?token=1bb71afb-4dd6-4415-9af9-014366e924d3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"staff",
+								"signout"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "1bb71afb-4dd6-4415-9af9-014366e924d3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Information",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/staff/information?token=f59e5049-7661-4b1c-ad87-61b20946b66b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"staff",
+								"information"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "f59e5049-7661-4b1c-ad87-61b20946b66b"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "快递员功能",
+			"item": [
+				{
+					"name": "Online Toggle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/courier/online-toggle?token=e4f29579-0ff5-47be-ba6f-acf8013b9a04",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"courier",
+								"online-toggle"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "e4f29579-0ff5-47be-ba6f-acf8013b9a04"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Pending Pickup Packages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/courier/package/pickup/pending?token=e4f29579-0ff5-47be-ba6f-acf8013b9a04",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"courier",
+								"package",
+								"pickup",
+								"pending"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "e4f29579-0ff5-47be-ba6f-acf8013b9a04"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Carry Pending Pickup Packages",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"package_id_list\": [1, 3, -1, \"abc\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/courier/package/pickup/carry?token=e4f29579-0ff5-47be-ba6f-acf8013b9a04",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"courier",
+								"package",
+								"pickup",
+								"carry"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "e4f29579-0ff5-47be-ba6f-acf8013b9a04"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Pending Delivery Packages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/courier/package/delivery/pending?token=61baf1c9-0cbd-451b-ab6e-e81f68dc3b14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"courier",
+								"package",
+								"delivery",
+								"pending"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "61baf1c9-0cbd-451b-ab6e-e81f68dc3b14"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Carry Pending Delivery Packages",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"package_id_list\":[1, 2, -1, \"abc\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/courier/package/delivery/carry?token=61baf1c9-0cbd-451b-ab6e-e81f68dc3b14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"courier",
+								"package",
+								"delivery",
+								"carry"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "61baf1c9-0cbd-451b-ab6e-e81f68dc3b14"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Picked Up Packages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/courier/package/pickedup/carried?token=e4f29579-0ff5-47be-ba6f-acf8013b9a04",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"courier",
+								"package",
+								"pickedup",
+								"carried"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "e4f29579-0ff5-47be-ba6f-acf8013b9a04"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pack Packages",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"package_id_list\": [1, 3, -1, \"abc\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/courier/package/pickedup/pack?token=e4f29579-0ff5-47be-ba6f-acf8013b9a04",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"courier",
+								"package",
+								"pickedup",
+								"pack"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "e4f29579-0ff5-47be-ba6f-acf8013b9a04"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Delivering Packages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/courier/package/delivering/carried?token=61baf1c9-0cbd-451b-ab6e-e81f68dc3b14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"courier",
+								"package",
+								"delivering",
+								"carried"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "61baf1c9-0cbd-451b-ab6e-e81f68dc3b14"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delivered Package",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/courier/package/delivered/1?token=61baf1c9-0cbd-451b-ab6e-e81f68dc3b14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"courier",
+								"package",
+								"delivered",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "61baf1c9-0cbd-451b-ab6e-e81f68dc3b14"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/courier/package/delivered?token=61baf1c9-0cbd-451b-ab6e-e81f68dc3b14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"courier",
+								"package",
+								"delivered"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "61baf1c9-0cbd-451b-ab6e-e81f68dc3b14"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "卡车司机功能",
+			"item": [
+				{
+					"name": "Sign In",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"email\": \"trucker@wsc.com\", \n    \"password\": \"trucker\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/staff/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"staff",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Containers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/trucker/container?token=4b4e4ee7-1386-45bb-b03b-d616edc71dac",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"trucker",
+								"container"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "4b4e4ee7-1386-45bb-b03b-d616edc71dac"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current Campus Containers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/trucker/container/campus?token=4b4e4ee7-1386-45bb-b03b-d616edc71dac",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"trucker",
+								"container",
+								"campus"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "4b4e4ee7-1386-45bb-b03b-d616edc71dac"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Load a Container",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/trucker/container/load/1?token=4b4e4ee7-1386-45bb-b03b-d616edc71dac",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"trucker",
+								"container",
+								"load",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "4b4e4ee7-1386-45bb-b03b-d616edc71dac"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unload a Container",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/trucker/container/unload/1?token=4b4e4ee7-1386-45bb-b03b-d616edc71dac",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"trucker",
+								"container",
+								"unload",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "4b4e4ee7-1386-45bb-b03b-d616edc71dac"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Packages in Container",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/trucker/container/1/packages?token=4b4e4ee7-1386-45bb-b03b-d616edc71dac",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"trucker",
+								"container",
+								"1",
+								"packages"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "4b4e4ee7-1386-45bb-b03b-d616edc71dac"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Route",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/trucker/route?token=4b4e4ee7-1386-45bb-b03b-d616edc71dac",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"trucker",
+								"route"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "4b4e4ee7-1386-45bb-b03b-d616edc71dac"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Next Campus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/trucker/route/next?token=4b4e4ee7-1386-45bb-b03b-d616edc71dac",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"trucker",
+								"route",
+								"next"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "4b4e4ee7-1386-45bb-b03b-d616edc71dac"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
